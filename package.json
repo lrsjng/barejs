@@ -1,0 +1,30 @@
+{
+  "name": "barejs",
+  "displayName": "barejs",
+  "version": "0.1.0",
+  "description": "barebone JavaScript project, personal preferences",
+  "homepage": "http://larsjung.de/barejs/",
+  "bugs": "https://github.com/lrsjng/barejs/issues",
+  "author": "Lars Jung <lrsjng@gmail.com> (http://larsjung.de)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lrsjng/barejs.git"
+  },
+  "scripts": {
+    "test": "mocha --recursive test"
+  },
+  "devDependencies": {
+    "chai": "~3.0.0",
+    "fquery": "~0.16.4",
+    "fquery-jshint": "~0.3.0",
+    "fquery-jszip": "~0.5.1",
+    "fquery-uglifyjs": "~0.3.0",
+    "mkr": "~0.8.5",
+    "mocha": "~2.2.5"
+  },
+  "engines": {
+    "node": ">=0.10",
+    "iojs": ">=1.0.0"
+  }
+}
