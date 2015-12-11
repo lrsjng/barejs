@@ -1,9 +1,7 @@
 # barejs
 
-<!--
-[![license][license-img]][github] [![web][web-img]][web] [![github][github-img]][github] [![bower][bower-img]][github]
-[![build status][travis-img]][travis]
--->
+[![license][license-img]][github] [![web][web-img]][web] [![github][github-img]][github] [![npm][npm-img]][npm]  
+[![version][npm-v-img]][npm] [![downloads][npm-dm-img]][npm] [![dependencies status][gemnasium-img]][gemnasium] [![build status][travis-img]][travis]
 
 Barebone JavaScript project, personal preferences.
 
@@ -11,7 +9,7 @@ Barebone JavaScript project, personal preferences.
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2015 Lars Jung (http://larsjung.de)
+Copyright (c) 2015 Lars Jung (https://larsjung.de)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -32,12 +30,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-[web]: http://larsjung.de/barejs/
+[web]: https://larsjung.de/barejs/
 [github]: https://github.com/lrsjng/barejs
+[npm]: https://www.npmjs.org/package/barejs
+[gemnasium]: https://gemnasium.com/lrsjng/barejs
 [travis]: https://travis-ci.org/lrsjng/barejs
 
 [license-img]: https://img.shields.io/badge/license-MIT-a0a060.svg?style=flat-square
 [web-img]: https://img.shields.io/badge/web-larsjung.de/barejs-a0a060.svg?style=flat-square
 [github-img]: https://img.shields.io/badge/github-lrsjng/barejs-a0a060.svg?style=flat-square
-[bower-img]: https://img.shields.io/badge/bower-lrsjng/barejs-a0a060.svg?style=flat-square
+[npm-img]: https://img.shields.io/badge/npm-barejs-a0a060.svg?style=flat-square
+
+[npm-v-img]: https://img.shields.io/npm/v/barejs.svg?style=flat-square
+[npm-dm-img]: https://img.shields.io/npm/dm/barejs.svg?style=flat-square
+[gemnasium-img]: https://img.shields.io/gemnasium/lrsjng/barejs.svg?style=flat-square
 [travis-img]: https://img.shields.io/travis/lrsjng/barejs.svg?style=flat-square
