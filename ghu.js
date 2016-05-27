@@ -1,7 +1,7 @@
 const {resolve, join} = require('path');
 const dateformat = require('dateformat');
 const {
-    default: ghu,
+    ghu,
     jszip, mapfn, read, remove, run, uglify, watch, webpack, wrap, write
 } = require('ghu');
 
