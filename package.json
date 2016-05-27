@@ -1,7 +1,7 @@
 {
   "name": "barejs",
   "displayName": "barejs",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Barebone JavaScript project, personal preferences.",
   "homepage": "https://larsjung.de/barejs/",
   "bugs": "https://github.com/lrsjng/barejs/issues",
@@ -14,7 +14,7 @@
   "main": "es5/barejs",
   "scripts": {
     "lint": "eslint .",
-    "test": "node test/tests.js",
+    "test": "node -r babel-core/register test/tests.js",
     "check": "npm run -s lint && npm run -s test",
     "build": "node ghu.js build",
     "release": "node ghu.js release",
