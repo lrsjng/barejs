@@ -1,6 +1,6 @@
 {
   "name": "barejs",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Barebone JavaScript project, personal preferences.",
   "homepage": "https://larsjung.de/barejs/",
   "bugs": "https://github.com/lrsjng/barejs/issues",
@@ -10,24 +10,24 @@
     "type": "git",
     "url": "https://github.com/lrsjng/barejs.git"
   },
-  "main": "es5/barejs",
+  "main": "dist/barejs",
   "scripts": {
     "lint": "eslint .",
-    "test": "node test/tests.js",
-    "cover": "isparta cover --dir coverage --report text --report html test/tests.js",
+    "test": "node test",
+    "cover": "isparta cover --dir coverage --report text --report html test",
     "check": "npm run -s lint && npm run -s test",
     "build": "node ghu build",
     "release": "node ghu release",
     "watch": "node ghu watch",
-    "precommit": "npm run -s release"
+    "precommit": "npm run -s check && npm run -s release"
   },
   "devDependencies": {
     "babel-loader": "6.2.4",
     "babel-preset-es2015": "6.9.0",
-    "eslint": "2.12.0",
-    "ghu": "0.6.0",
+    "eslint": "3.1.1",
+    "ghu": "0.7.0",
     "isparta": "4.0.0",
-    "scar": "0.11.0"
+    "scar": "0.13.0"
   },
   "engines": {
     "node": ">=6.0.0"
