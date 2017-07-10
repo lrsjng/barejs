@@ -1,4 +1,4 @@
-/*! barejs v0.7.0 - https://larsjung.de/barejs/ */
+/*! barejs v0.8.0 - https://larsjung.de/barejs/ */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
