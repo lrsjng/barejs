@@ -43,7 +43,7 @@ ghu.task('build:scripts', runtime => {
                     loader: 'babel-loader',
                     query: {
                         cacheDirectory: true,
-                        presets: ['es2015']
+                        presets: ['env']
                     }
                 }
             ]
@@ -76,7 +76,7 @@ ghu.task('build:test', runtime => {
                     loader: 'babel-loader',
                     query: {
                         cacheDirectory: true,
-                        presets: ['es2015']
+                        presets: ['env']
                     }
                 }
             ]
