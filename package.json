@@ -1,6 +1,6 @@
 {
   "name": "barejs",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Barebone JavaScript project, personal preferences.",
   "homepage": "https://larsjung.de/barejs/",
   "bugs": "https://github.com/lrsjng/barejs/issues",
@@ -19,10 +19,11 @@
     "precommit": "node test && node ghu release"
   },
   "devDependencies": {
-    "babel-loader": "7.1.1",
-    "babel-preset-env": "1.7.0",
-    "ghu": "0.13.0",
-    "scar": "1.2.0"
+    "@babel/core": "7.4.3",
+    "@babel/preset-env": "7.4.3",
+    "babel-loader": "8.0.5",
+    "ghu": "0.15.0",
+    "scar": "1.4.0"
   },
   "engines": {
     "node": ">=8.0.0"

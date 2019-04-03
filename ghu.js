@@ -32,18 +32,21 @@ ghu.task('lint', () => {
 
 ghu.task('build:scripts', runtime => {
     const webpackConfig = {
+        mode: 'none',
         output: {
             library: NAME,
-            libraryTarget: 'umd'
+            libraryTarget: 'umd',
+            umdNamedDefine: true,
+            globalObject: '(typeof self !== \'undefined\' ? self : this)'
         },
         module: {
-            loaders: [
+            rules: [
                 {
                     include: [LIB],
                     loader: 'babel-loader',
                     query: {
                         cacheDirectory: true,
-                        presets: ['env']
+                        presets: ['@babel/preset-env']
                     }
                 }
             ]
@@ -56,7 +59,7 @@ ghu.task('build:scripts', runtime => {
         .then(wrap(runtime.commentJs))
         .then(write(`${DIST}/${NAME}.js`, {overwrite: true}))
         .then(write(`${BUILD}/${NAME}-${runtime.pkg.version}.js`, {overwrite: true}))
-        .then(uglify({compressor: {warnings: false}}))
+        .then(uglify())
         .then(wrap(runtime.commentJs))
         .then(write(`${DIST}/${NAME}.min.js`, {overwrite: true}))
         .then(write(`${BUILD}/${NAME}-${runtime.pkg.version}.min.js`, {overwrite: true}));
@@ -69,14 +72,15 @@ ghu.task('build:copy', () => {
 
 ghu.task('build:test', runtime => {
     const webpackConfig = {
+        mode: 'none',
         module: {
-            loaders: [
+            rules: [
                 {
                     include: [LIB, TEST],
                     loader: 'babel-loader',
                     query: {
                         cacheDirectory: true,
-                        presets: ['env']
+                        presets: ['@babel/preset-env']
                     }
                 }
             ]
@@ -87,7 +91,7 @@ ghu.task('build:test', runtime => {
     return Promise.all([
         read(`${TEST}/index.js`)
             .then(webpack(webpackConfig, {showStats: false}))
-            .then(uglify({compressor: {warnings: false}}))
+            .then(uglify())
             .then(wrap(runtime.commentJs))
             .then(write(`${BUILD}/test/index.js`, {overwrite: true})),
 
