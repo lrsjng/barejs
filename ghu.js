@@ -1,6 +1,5 @@
 const {resolve, join} = require('path');
-const dateformat = require('dateformat');
-const {ghu, jszip, mapfn, read, remove, run, uglify, watch, webpack, wrap, write} = require('ghu');
+const {ghu, jszip, mapfn, read, remove, uglify, watch, webpack, wrap, write} = require('ghu');
 
 const NAME = 'barejs';
 
@@ -14,11 +13,9 @@ ghu.defaults('release');
 
 ghu.before(runtime => {
     runtime.pkg = Object.assign({}, require('./package.json'));
-    runtime.stamp = dateformat(Date.now(), 'HH:MM:ss');
     runtime.comment = `${runtime.pkg.name} v${runtime.pkg.version} - ${runtime.pkg.homepage}`;
     runtime.commentJs = `/*! ${runtime.comment} */\n`;
     runtime.commentHtml = `<!-- ${runtime.comment} -->`;
-
     console.log(runtime.comment);
 });
 
@@ -26,36 +23,9 @@ ghu.task('clean', () => {
     return remove(`${BUILD}, ${DIST}`);
 });
 
-ghu.task('lint', () => {
-    return run('eslint .', {stdio: 'inherit'});
-});
-
 ghu.task('build:scripts', runtime => {
-    const webpackConfig = {
-        mode: 'none',
-        output: {
-            library: NAME,
-            libraryTarget: 'umd',
-            umdNamedDefine: true,
-            globalObject: '(typeof self !== \'undefined\' ? self : this)'
-        },
-        module: {
-            rules: [
-                {
-                    include: [LIB],
-                    loader: 'babel-loader',
-                    query: {
-                        cacheDirectory: true,
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            ]
-        },
-        devtool: '#inline-source-map'
-    };
-
     return read(`${LIB}/${NAME}.js`)
-        .then(webpack(webpackConfig, {showStats: false}))
+        .then(webpack(webpack.cfg_umd(NAME, [LIB]), {showStats: false}))
         .then(wrap(runtime.commentJs))
         .then(write(`${DIST}/${NAME}.js`, {overwrite: true}))
         .then(write(`${BUILD}/${NAME}-${runtime.pkg.version}.js`, {overwrite: true}))
@@ -71,26 +41,9 @@ ghu.task('build:copy', () => {
 });
 
 ghu.task('build:test', runtime => {
-    const webpackConfig = {
-        mode: 'none',
-        module: {
-            rules: [
-                {
-                    include: [LIB, TEST],
-                    loader: 'babel-loader',
-                    query: {
-                        cacheDirectory: true,
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            ]
-        },
-        devtool: '#inline-source-map'
-    };
-
     return Promise.all([
         read(`${TEST}/index.js`)
-            .then(webpack(webpackConfig, {showStats: false}))
+            .then(webpack(webpack.cfg([LIB, TEST]), {showStats: false}))
             .then(uglify())
             .then(wrap(runtime.commentJs))
             .then(write(`${BUILD}/test/index.js`, {overwrite: true})),
