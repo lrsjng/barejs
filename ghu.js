@@ -44,7 +44,7 @@ ghu.task('build:test', runtime => {
     return Promise.all([
         read(`${TEST}/index.js`)
             .then(webpack(webpack.cfg([LIB, TEST]), {showStats: false}))
-            .then(uglify())
+            // .then(uglify())
             .then(wrap(runtime.commentJs))
             .then(write(`${BUILD}/test/index.js`, {overwrite: true})),
 
