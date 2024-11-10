@@ -1,7 +1,6 @@
 # barejs
 
-[![license][license-img]][github] [![web][web-img]][web] [![github][github-img]][github] [![npm][npm-img]][npm]  
-[![version][npm-v-img]][npm] [![downloads][npm-dm-img]][npm]
+[![license][license-img]][github] [![github][github-img]][github]
 
 Barebone JavaScript project, personal preferences.
 
@@ -9,7 +8,7 @@ Barebone JavaScript project, personal preferences.
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2021 Lars Jung (https://larsjung.de)
+Copyright (c) 2024 Lars Jung (https://larsjung.de)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -30,14 +29,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-[web]: https://larsjung.de/barejs/
 [github]: https://github.com/lrsjng/barejs
-[npm]: https://www.npmjs.org/package/barejs
 
 [license-img]: https://img.shields.io/badge/license-MIT-a0a060.svg?style=flat-square
-[web-img]: https://img.shields.io/badge/web-larsjung.de/barejs-a0a060.svg?style=flat-square
 [github-img]: https://img.shields.io/badge/github-lrsjng/barejs-a0a060.svg?style=flat-square
-[npm-img]: https://img.shields.io/badge/npm-barejs-a0a060.svg?style=flat-square
-
-[npm-v-img]: https://img.shields.io/npm/v/barejs.svg?style=flat-square
-[npm-dm-img]: https://img.shields.io/npm/dm/barejs.svg?style=flat-square

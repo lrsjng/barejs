@@ -1,9 +1,7 @@
 {
   "name": "barejs",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Barebone JavaScript project, personal preferences.",
-  "homepage": "https://larsjung.de/barejs/",
-  "bugs": "https://github.com/lrsjng/barejs/issues",
   "author": "Lars Jung <lrsjng@gmail.com> (https://larsjung.de)",
   "license": "MIT",
   "repository": {
@@ -21,15 +19,16 @@
     "precommit": "npm run -s check && npm run -s build"
   },
   "devDependencies": {
-    "@babel/core": "7.14.6",
-    "@babel/preset-env": "7.14.7",
-    "@babel/register": "7.14.5",
-    "eslint": "7.31.0",
-    "ghu": "0.26.0",
-    "nyc": "15.1.0",
-    "scar": "2.3.0"
+    "@babel/core": "7.26.0",
+    "@babel/preset-env": "7.26.0",
+    "@babel/register": "7.25.9",
+    "eslint": "9.14.0",
+    "ghu": "0.28.5",
+    "globals": "15.12.0",
+    "nyc": "17.1.0",
+    "scar": "2.3.4"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=22.0.0"
   }
 }
